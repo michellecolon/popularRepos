@@ -101,6 +101,12 @@
         this.fetchRepos(this.state.activeLanguage)
       }
 
+      componentDidUpdate(prevProps, prevState){
+        if (prevState.activeLanguage !== this.state.activeLanguage){
+          this.fetchRepos(this.state.activeLanguage)
+        }
+      }
+
       fetchRepos(lang){
         this.setState({
           loading: true
